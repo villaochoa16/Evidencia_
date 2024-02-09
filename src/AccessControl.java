@@ -16,7 +16,9 @@ public class AccessControl {
     public boolean authenticate(String username, String password) {
         return administrators.containsKey(username) && administrators.get(username).equals(password);
     }
-
+    public void initiateDoctorManager(String username) {
+        DoctorManager doctorManager = new DoctorManager();
+    }
 
     public static void main(String[] args) {
         AccessControl accessControl = new AccessControl();
@@ -33,7 +35,7 @@ public class AccessControl {
 
         if (accessControl.authenticate(username, password)) {
             System.out.println("Acceso concedido. Bienvenido, " + username + "!");
-
+            accessControl.initiateDoctorManager(username);
         } else {
             System.out.println("Acceso denegado. Usuario o contraseña incorrectos.");
         }
