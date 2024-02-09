@@ -18,6 +18,7 @@ public class AccessControl {
     }
     public void initiateDoctorManager(String username) {
         DoctorManager doctorManager = new DoctorManager();
+        doctorManager.mainMenu();
     }
 
     public static void main(String[] args) {
